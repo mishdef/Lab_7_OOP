@@ -1,0 +1,88 @@
+﻿<Window x:Class="OOPLabWPF.CarAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOPLabWPF"
+        mc:Ignorable="d"
+        Title="CarAddWindow" Height="445" Width="391" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/Icon/car-icon-png-4272.png">
+    <Grid>
+        <Label Content="Constructor type: " HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Margin="121,14,0,0" VerticalAlignment="Top" Width="129" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Manualy"/>
+            <ComboBoxItem Content="String data"/>
+            <ComboBoxItem Content="Minimal"/>
+            <ComboBoxItem Content="All parameters"/>
+            <ComboBoxItem Content="No parameters"/>
+
+        </ComboBox>
+        <GroupBox x:Name="GroupBox_Manual" Header="Manualy" Margin="29,50,34,22" Visibility="Hidden">
+            <Grid>
+                <Label Content="Mark:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="manualMark_TextBox" HorizontalAlignment="Left" Margin="47,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Model:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,27,0,0"/>
+                <TextBox x:Name="manualModel_TextBox" HorizontalAlignment="Left" Margin="47,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Color:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,53,0,0"/>
+                <TextBox x:Name="manualColor_TextBox" HorizontalAlignment="Left" Margin="47,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="HP:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,79,0,0"/>
+                <TextBox x:Name="manualHP_TextBox" HorizontalAlignment="Left" Margin="47,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Weight:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,105,0,0"/>
+                <TextBox x:Name="manualWeight_TextBox" HorizontalAlignment="Left" Margin="48,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" Margin="219,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="119" Width="70"><Run Text="Valid colors:"/><LineBreak/><Run Text="  0. Red"/><LineBreak/><Run Text="  1. Blue"/><LineBreak/><Run Text="  2.  Green"/><LineBreak/><Run Text="  3. Black"/><LineBreak/><Run Text="  4. White"/><LineBreak/><Run Text="  5. Gray"/></TextBlock>
+                <Label Content="Milage:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,131,0,0"/>
+                <TextBox x:Name="manualMilage_TexttBox" HorizontalAlignment="Left" Margin="47,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Fuel consumption (per 100km):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,157,0,0"/>
+                <TextBox x:Name="manualFuelConsumption_TextBox" HorizontalAlignment="Left" Margin="174,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Fuel capacity:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,184,0,0"/>
+                <TextBox x:Name="manualFuelCapacity_TextBox" HorizontalAlignment="Left" Margin="81,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Production date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,211,0,0"/>
+                <TextBox x:Name="manualProductionDate_TextBox" HorizontalAlignment="Left" Margin="98,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Doors:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,237,0,0"/>
+                <TextBox x:Name="manualDoors_TextBox" HorizontalAlignment="Left" Margin="47,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="GroupBox_String" Header="String data" Margin="29,50,34,22" Visibility="Hidden">
+            <Grid>
+                <Label Content="String:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                <TextBox x:Name="stringData_TextBox" HorizontalAlignment="Center" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="GroupBox_Minimal" Header="Minimal parameters" Margin="29,50,34,22" Visibility="Hidden">
+            <Grid>
+                <Label Content="Mark:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="minimalMark_TextBox" HorizontalAlignment="Left" Margin="47,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Model:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,27,0,0"/>
+                <TextBox x:Name="minimalModel_TextBox" HorizontalAlignment="Left" Margin="47,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Color" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,53,0,0" AutomationProperties.Name=""/>
+                <TextBox x:Name="minimalColor_TextBox" HorizontalAlignment="Left" Margin="47,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" Margin="219,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="119" Width="70"><Run Text="Valid colors:"/><LineBreak/><Run Text="  0. Red"/><LineBreak/><Run Text="  1. Blue"/><LineBreak/><Run Text="  2.  Green"/><LineBreak/><Run Text="  3. Black"/><LineBreak/><Run Text="  4. White"/><LineBreak/><Run Text="  5. Gray"/></TextBlock>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="GroupBox_AllParameters" Header="All parameters" Margin="29,50,34,22" Visibility="Hidden">
+            <Grid>
+                <Label Content="Mark:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="alllMark_TextBox" HorizontalAlignment="Left" Margin="47,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Model:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,27,0,0"/>
+                <TextBox x:Name="allModel_TextBox" HorizontalAlignment="Left" Margin="47,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Color:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,53,0,0"/>
+                <TextBox x:Name="Color_TextBox" HorizontalAlignment="Left" Margin="47,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="HP:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,79,0,0"/>
+                <TextBox x:Name="HP_TextBox" HorizontalAlignment="Left" Margin="47,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Weight:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,105,0,0"/>
+                <TextBox x:Name="Weight_TextBox" HorizontalAlignment="Left" Margin="48,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" Margin="194,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="119" Width="70"><Run Text="Valid colors:"/><LineBreak/><Run Text="  0. Red"/><LineBreak/><Run Text="  1. Blue"/><LineBreak/><Run Text="  2.  Green"/><LineBreak/><Run Text="  3. Black"/><LineBreak/><Run Text="  4. White"/><LineBreak/><Run Text="  5. Gray"/></TextBlock>
+                <Label Content="Milage:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,131,0,0"/>
+                <TextBox x:Name="Milage_TextBox" HorizontalAlignment="Left" Margin="48,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Fuel consumption (per 100km):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,157,0,0"/>
+                <TextBox x:Name="FuelConsumption_TextBox" HorizontalAlignment="Left" Margin="174,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
+                <Label Content="Fuel capacity:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,184,0,0"/>
+                <TextBox x:Name="FuelCapacity_TextBox" HorizontalAlignment="Left" Margin="81,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Production date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,211,0,0"/>
+                <TextBox x:Name="ProductionDate_TextBox" HorizontalAlignment="Left" Margin="98,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Doors:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,237,0,0"/>
+                <TextBox x:Name="Doors_TextBox" HorizontalAlignment="Left" Margin="48,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="AddButton" Click="AddButton_Click"  Content="Add" HorizontalAlignment="Left" Margin="268,10,0,0" VerticalAlignment="Top" Height="30" Width="72" IsEnabled="True"/>
+    </Grid>
+</Window>

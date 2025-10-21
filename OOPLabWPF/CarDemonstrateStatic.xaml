@@ -1,0 +1,16 @@
+﻿<Window x:Class="OOPLabWPF.CarDemonstrateStatic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOPLabWPF"
+        mc:Ignorable="d"
+        Title="Static menu" Height="142" Width="247" Icon="/Icon/car-icon-png-4272.png" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Label x:Name="StatisticsLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fuel price:" HorizontalAlignment="Left" Margin="11,66,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FuelPriceTextBox" HorizontalAlignment="Left" Margin="75,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" IsEnabled="False" PreviewKeyDown="FuelPriceTextBox_PreviewKeyDown"/>
+        <Button x:Name="FuelEditButton" Content="Edit" HorizontalAlignment="Left" Margin="161,70,0,0" VerticalAlignment="Top" Height="18" Click="FuelEditButton_Click"/>
+
+    </Grid>
+</Window>

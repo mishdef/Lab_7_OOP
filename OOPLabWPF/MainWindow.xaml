@@ -1,0 +1,97 @@
+﻿<Window x:Class="OOPLabWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOPLabWPF"
+        mc:Ignorable="d"
+        Title="Car class testing" Height="450" Width="850" Loaded="Window_Loaded" MinHeight="450" MinWidth="850" PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown" Icon="/Icon/car-icon-png-4272.png">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9"/>
+            <ColumnDefinition Width="142*"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="124*"/>
+            <ColumnDefinition Width="222*"/>
+            <ColumnDefinition Width="160.5"/>
+            <ColumnDefinition Width="7"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="4"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="368*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.ColumnSpan="9" Margin="0,0,-1180,0">
+            <MenuItem Header="File">
+                <MenuItem x:Name="FileImportMenuItem" Header="Import" Click="FileImportMenuItem_Click"/>
+                <MenuItem x:Name="ExportMenuItem" Header="Export to">
+                    <MenuItem x:Name="FileExportToCSVMenuItem" Header="CSV file" Click="FileExportToCSVMenuItem_Click"/>
+                    <MenuItem x:Name="FileExportToJSONMenuItem" Header="JSON file" Click="FileExportToJSONMenuItem_Click"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Menu">
+                <MenuItem x:Name="AddMenuItem" Header="Add" Click="AddMenuItem_Click"/>
+                <MenuItem x:Name="AddSeedDataMenuItem" Header="Add seed data" Click="AddSeedDataMenuItem_Click"/>
+                <MenuItem x:Name="ClearAllCarsMenuItem" Header="Clear all cars" Click="ClearAllCarsMenuItem_Click" IsEnabled="False"/>
+            </MenuItem>
+            <MenuItem x:Name="StaticMenuItem" Height="24" Header="Static" Click="StaticMenuItem_Click"/>
+            <MenuItem x:Name="SearchMenuItem" Header="Search" Click="SearchMenuItem_Click"/>
+        </Menu>
+        <Label x:Name="labelCount" Content="Count: " Margin="85,0,0,0" VerticalAlignment="Center" Height="26" Grid.Column="6" HorizontalAlignment="Left" Width="73"/>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  IsReadOnly="True" SelectionMode="Single" CanUserAddRows="False" GridLinesVisibility="Horizontal" HeadersVisibility="Column" Grid.Column="1" Grid.Row="3" d:ItemsSource="{Binding Cars}" Grid.ColumnSpan="7" Margin="0,0,2,0" MouseDoubleClick="dataGrid_PreviewMouseDoubleClick" PreviewKeyDown="dataGrid_PreviewKeyDown" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mark&amp;Model" Binding="{Binding MarkAndModel}" Width="3.5*"/>
+                <DataGridTextColumn Header="Color" Binding="{Binding Color}" Width="1.1*"/>
+                <DataGridTextColumn Header="Doors" Binding="{Binding NumberOfDoors}" Width="1.1*"/>
+                <DataGridTextColumn Header="HP" Binding="{Binding HorsePower}" Width="1*"/>
+                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Width="1.3*"/>
+                <DataGridTextColumn Header="Milage" Binding="{Binding Milage}" Width="2*"/>
+                <DataGridTextColumn Header="Cap" Binding="{Binding FuelCapacity}" Width="1*"/>
+                <DataGridTextColumn Header="Fuel" Binding="{Binding CurrentFuel}" Width="1*"/>
+                <DataGridTextColumn Header="Consumption" Binding="{Binding FuelConsumptionPer100km}" Width="2.1*"/>
+                <DataGridTextColumn Header="Speed" Binding="{Binding CurrentSpeed, StringFormat=N2}" Width="1.1*"/>
+                <DataGridTextColumn Header="Max speed" Binding="{Binding MaxSpeed, StringFormat=N2}" Width="2*"/>
+                <DataGridTextColumn Header="Date of production" Binding="{Binding ProductionDate, StringFormat=dd.MM.yyyy}"  Width="2.9*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="labelRemain" Content="Remain: " Margin="3,0,0,0" VerticalAlignment="Center" Height="28" Grid.Column="6" Width="81" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.347"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.161"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Border x:Name="SearchCanvas" Grid.Row="2" CornerRadius="4" Padding="8" Background="#F2F2F2" BorderBrush="#DDD" BorderThickness="1" Margin="0,2,2,1" Grid.ColumnSpan="7" Grid.RowSpan="2" Grid.Column="1" Visibility="Hidden">
+            <Canvas Grid.ColumnSpan="3" Margin="-5,-13,1,-9" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1">
+
+                <Label Content="Search by:" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,0,0" Grid.RowSpan="2"/>
+                <ComboBox x:Name="SearchTypePickerComboBox" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="120" Canvas.Left="64" Canvas.Top="7" SelectionChanged="SearchTypePickerComboBox_SelectionChanged">
+                    <ComboBoxItem Content="mark and model" IsSelected="True"/>
+                    <ComboBoxItem Content="color"/>
+                </ComboBox>
+                <Label Grid.Column="2" Content="Search prompt: " HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Grid.RowSpan="2" Canvas.Left="199" Canvas.Top="5"/>
+                <ComboBox x:Name="ColorPickerComboBox" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Width="68" Canvas.Left="289" Canvas.Top="7" SelectionChanged="ColorPickerComboBox_SelectionChanged" Visibility="Hidden">
+                    <ComboBoxItem Content="Red"/>
+                    <ComboBoxItem Content="Blue"/>
+                    <ComboBoxItem Content="Green"/>
+                    <ComboBoxItem Content="Black"/>
+                    <ComboBoxItem Content="White"/>
+                    <ComboBoxItem Content="Gray"/>
+                </ComboBox>
+                <TextBox x:Name="SearchPromptStringTextBox" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="2" Canvas.Left="289" Canvas.Top="9" TextChanged="SearchPromptStringTextBox_TextChanged"/>
+                <Button x:Name="SearchClearStringButton" Content="X" Canvas.Left="414" Canvas.Top="9" Height="18" Width="18" Click="SearchClearButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Hidden"/>
+                <Button x:Name="SearchClearColorButton" Content="X" Canvas.Left="362" Canvas.Top="9" Height="18" Width="18" Click="SearchClearButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Hidden"/>
+
+            </Canvas>
+        </Border>
+    </Grid>
+</Window>

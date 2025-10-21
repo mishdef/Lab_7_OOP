@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPLabWPF", "OOPLabWPF\OOPLabWPF.csproj", "{1EFA9790-C784-4388-AD67-BC1581F504D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabMsTestTests", "LabMsTestTests\LabMsTestTests.csproj", "{977FC800-E46B-467D-8D7F-908E13FB8322}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EFA9790-C784-4388-AD67-BC1581F504D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFA9790-C784-4388-AD67-BC1581F504D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFA9790-C784-4388-AD67-BC1581F504D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFA9790-C784-4388-AD67-BC1581F504D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{977FC800-E46B-467D-8D7F-908E13FB8322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{977FC800-E46B-467D-8D7F-908E13FB8322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{977FC800-E46B-467D-8D7F-908E13FB8322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{977FC800-E46B-467D-8D7F-908E13FB8322}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E469FB8-D5ED-41AC-A85D-96BCA87783AC}
+	EndGlobalSection
+EndGlobal
